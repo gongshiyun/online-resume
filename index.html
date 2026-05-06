@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>个人简历[龚士云]</title>
+  <style>
+    :root {
+      --primary: #1a202c;
+      --accent: #2b6cb0;
+      --text: #2d3748;
+      --text-light: #4a5568;
+      --border: #e2e8f0;
+      --bg: #f7fafc;
+      --white: #ffffff;
+      --spacing: 1.5rem;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
+    }
+    .resume {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 48px 56px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Header */
+    .header { margin-bottom: 32px; border-bottom: 2px solid var(--primary); padding-bottom: 20px; }
+    .header h1 { font-size: 2.1rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; letter-spacing: 0.5px; }
+    .header .tagline { font-size: 1rem; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .header .contact { font-size: 0.9rem; color: var(--text-light); display: flex; flex-wrap: wrap; gap: 16px; }
+    .header .contact span { display: flex; align-items: center; gap: 6px; }
+    .header .contact span::before { content: "•"; color: var(--border); }
+    .header .contact span:first-child::before { content: ""; }
+    .header .contact a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+    .header .contact a:hover { text-decoration: underline; }
+
+    /* Sections */
+    section { margin-bottom: 28px; }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary);
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Content Blocks */
+    .entry { margin-bottom: 22px; position: relative; padding-left: 14px; border-left: 2px solid var(--border); }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 4px; }
+    .entry-title { font-size: 1.05rem; font-weight: 600; color: #1a202c; }
+    .entry-meta { font-size: 0.85rem; color: var(--text-light); font-weight: 400; }
+    .entry-subtitle { font-weight: 500; color: #374151; margin-bottom: 6px; font-size: 0.95rem; }
+    .entry p,.entry li { font-size: 0.95rem; color: var(--text); margin-bottom: 5px; }
+    .entry ul { padding-left: 18px; margin-top: 6px; }
+    .entry li::marker { color: var(--accent); }
+
+    /* Summary & Skills */
+    .summary-list,.skills-list { list-style: none; }
+    .summary-list li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+    .summary-list li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 10px 24px; }
+    .skill-item { font-size: 0.92rem; }
+    .skill-cat { font-weight: 600; color: var(--primary); min-width: 90px; display: inline-block; }
+
+    /* Table for Debug Cases */
+    .debug-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
+    .debug-table th,.debug-table td { padding: 8px 10px; border: 1px solid var(--border); text-align: left; }
+    .debug-table th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+    .debug-table td { color: var(--text); }
+
+    /* Print Styles */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .resume { box-shadow: none; padding: 0; max-width: 100%; border-radius: 0; }
+      .header,.section-title { border-color: #333; }
+      a { color: #000; text-decoration: none; }
+      .debug-table th { background: #eee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .entry,.summary-list li { page-break-inside: avoid; }
+      @page { margin: 1.5cm 1.8cm; size: A4; }
+    }
+
+    /* Utility */
+    .highlight { color: var(--accent); font-weight: 500; }
+    .tag { display: inline-block; background: #edf2f7; color: #4a5568; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <header class="header">
+      <h1>龚士云</h1>
+      <div >求职意向：Java 服务端研发工程师 ｜ 到岗时间：1个月</div>
+      <div class="contact">
+        <span>📞 18807519505</span>
+        <span>📧 gongshiyun@126.com</span>
+        <!-- <span>🌐 <a href="#">[GitHub/技术博客]</a></span> -->
+        <span>📍 深圳</span>
+      </div>
+    </header>
+    <section>
+      <h2 class="section-title">教育背景</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">中山大学 ｜ 软件工程 ｜ 本科</span>
+          <span class="entry-meta">2013.09 – 2017.06</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">核心优势</h2>
+      <ul class="summary-list">
+        <li><strong>8年Java后端经验</strong>，7年物联网私有云/公有云平台业务设计和开发</li>
+        <li><strong>系统架构设计经验</strong>：熟悉设备管理、系统/设备长连接穿透等IoT核心场景方案和架构设计</li>
+        <li><strong>稳定性治理经验</strong>：独立解决CPU飙高、OOM、连接池耗尽、Redis超时等线上问题，熟悉jstack/jmap/Arthas/慢查询日志等全链路排查工具链</li>
+        <li><strong>项目技术管理经验</strong>：主导TUMS平台11+次迭代，管理6人团队交付，建立故障预案/代码规范等工程体系，市场反馈数量下降70%，问题解决效率提高50%</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">工作经历</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">深圳普联技术有限公司（TP-LINK）</span>
+          <span class="entry-meta">2018.09 – 至今</span>
+        </div>
+        <div class="entry-subtitle">Java 高级工程师 / TUMS2.0平台负责人</div>
+        <ul>
+          <li>负责商用云平台、TUMS私有云平台、智能家居客控系统的后端架构设计与核心模块开发</li>
+          <li>负责TUMS 2.0/3.0平台多版本、客户定制版本的迭代、管理、以及TUMS3.0系统级联架构设计及稳定性问题治理</li>
+          <li>带领6人团队完成平台业务的需求评审、模块方案设计、代码Review与发版部署，迭代周期稳定在1-2个月/版本</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">中数通信息有限公司</span>
+          <span class="entry-meta">2017.07 – 2018.09</span>
+        </div>
+        <div class="entry-subtitle">Java 工程师</div>
+        <ul>
+          <li>参与大藤峡工程项目管理系统微服务设计与开发，负责业务功能模块全栈实现</li>
+          <li>独立完成生产环境发版部署、监控告警配置与线上问题排查</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">核心项目经验</h2>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">TUMS 3.0 系统级联</span>
+          <span class="entry-meta">项目负责人 / 架构设计主导</span>
+        </div>
+        <!-- <div class="entry-subtitle">技术栈：Spring Boot，Nginx，PostgreSQL，Redis，Zookeeper，Netty</div> -->
+        <ul>
+          <li><strong>产品需求沟通优化</strong>：深入参与产品需求评审，识别并剔除冗余功能/流程，与产品讨论优化UE交互逻辑，降低技术方案复杂度，预计节省开发人力成本约30人/天</li>
+          <li><strong>系统级联架构设计</strong>：支持系统两级级联架构并设计上预留多级扩展，云边设备采用长连接通道拉取/配置高效实现设备统一管理</li>
+          <li><strong>级联长连接穿透方案</strong>：长连接穿透设计：设计基于私有TCP协议的长连接方案，实现父节点请求直接路由至子节点，避免了多级转发带来的数据延迟与同步冗余，有效降低了系统架构复杂度。</li>
+
+          <li><strong>关键成果</strong>：系统级联数据同步量减少80%，团队工作量减少40%，项目发版时间提前1.5个月</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">TUMS 2.0 私有云平台</span>
+          <span class="entry-meta">平台项目负责人</span>
+        </div>
+        <!-- <div class="entry-subtitle">技术栈：Spring Boot，MySQL，Redis，Netty，Prometheus/Grafana</div> -->
+        <ul>
+          <li><strong>负责平台多版本迭代</strong>：负责迭代11+平台版本，带领团队进行平台业务模块需求分析、方案设计、技术指导评审、基础组件维护</li>
+          <li><strong>局域网消息实时推送</strong>：负责设计通用websocket服务器和消息推送协议，对接多业务子系统实现局域网消息推送网页/APP/桌面客户端</li>
+          <li><strong>稳定性问题治理</strong>：处理多个版本的稳定性问题的定位排查和修复，并输出稳定性问题排查指引手册，提高多个项目的稳定性问题解决效率</li>
+        </ul>
+        <!-- <table class="debug-table">
+          <thead><tr><th>问题现象</th><th>定位工具链</th><th>根因与修复</th><th>修复结果</th></tr></thead>
+          <tbody>
+            <tr><td>CPU持续占用高</td><td>top → jstack日志分析</td><td>线程死循环+未释放锁 → 修复逻辑+熔断</td><td>常规场景CPU稳定降至30%</td></tr>
+            <tr><td>OOM堆外内存</td><td>MAT分析、jcmd NMT监控内存差异</td><td>设备图片上报服务器处理压力过大、服务器硬件性能较弱 → 设置Netty水位线限制</td><td>高压场景OOM归零，内存曲线趋向平稳</td></tr>
+            <tr><td>DB连接池耗尽</td><td>慢查询日志 → show processlist</td><td>慢查询堆积 → 索引优化+业务查询逻辑优化+连接池调优</td><td>核心接口QPS提升3倍</td></tr>
+            <tr><td>Redis BRPOP超时</td><td>Lettuce+Redis源码分析+场景复现</td><td>Redis自身Bug，系统时间前后大幅变更导致BRPOP持续超时，换用RPOP命令解决</td><td>提高系统稳定性</td></tr>
+          </tbody>
+        </table> -->
+        <ul>
+          <li><strong>关键成果</strong>：按期发布多个版本交付客户使用；线上严重故障率同比下降70%，保障了客户现场部署的稳定性</li>
+        </ul>
+        
+
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">TP-LINK商用云平台</span>
+          <span class="entry-meta">平台核心模块负责人</span>
+        </div>
+        <!-- <div class="entry-subtitle">技术栈：Spring Cloud，MySQL，RabbitMQ</div> -->
+        <ul>
+          <li><strong>设备管理模块融合重构</strong>：抽象设备核心实体，各类型设备业务实现统一DeviceService接口，新增设备类型接入周期从2周缩短至3天</li>
+          <li><strong>云上数据实时迁移</strong>：使用腾讯云MySQL+Cannal+数据迁移转换脚本实现多个业务云系统到新融合云的数据平滑迁移</li>
+          <li><strong>设备远程管理设计和实现</strong>：独立设计远程管理功能，制定私有协议长连接协议实现跨网访问设备本地管理页面，实现云上云下系统高效跨网管理设备</li>
+          
+          <li><strong>关键成果</strong>：统一设备API覆盖3个历史系统，云服务器成本下降50%;远程设备通道支持并发会话500+，大幅提高设备管理效率</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">技术栈</h2>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-cat">语言/框架</span> 熟悉 Java，Spring Boot/Cloud，Netty，了解 Go 语言基础，</div>
+        <div class="skill-item"><span class="skill-cat">数据库/中间件</span> 熟悉 MySQL，Redis，PostgreSQL，RabbitMq</div>
+        <div class="skill-item"><span class="skill-cat">排查/运维</span> 熟悉线上故障排查 (jcmd/jstack/Arthas/MAT)，熟悉 Linux 常用命令</div>
+        <div class="skill-item"><span class="skill-cat">其他</span> 了解 Docker/K8s 基本部署，Jenkins，熟悉 DDD 设计思想</div>
+      </div>
+    </section>
+    <!-- <section>
+      <h2 class="section-title">英语</h2>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-cat">CET-6</span> 460</div>
+      </div>
+    </section> -->
+  </main>
+</body>
+</html>
